@@ -1,0 +1,10 @@
+{{ opened }}
+<mat-drawer-container class="w-full h-full">
+
+  <ng-content #conteudo></ng-content>
+
+  <mat-drawer #drawer [(opened)]="opened" [autoFocus]="true" position="end" [mode]="'over'">
+
+  </mat-drawer>
+</mat-drawer-container>
+
