@@ -1,9 +1,9 @@
-{{ opened }}
 <mat-drawer-container class="w-full h-full">
+  <app-top-login class="sticky z-10"></app-top-login>
 
   <ng-content #conteudo></ng-content>
 
-  <mat-drawer #drawer [(opened)]="opened" [autoFocus]="true" position="end" [mode]="'over'">
+  <mat-drawer #drawer [opened]="opened" (closedStart)="closeBar()" [autoFocus]="true" position="end" [mode]="'over'">
 
   </mat-drawer>
 </mat-drawer-container>

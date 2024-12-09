@@ -4,15 +4,16 @@ import { LanguageService } from '../../shared/services/language.service';
 import { AUTHOR_GITHUB } from '../common/constants';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SignSideComponent } from './sign-side/sign-side.component';
+import { TopLoginComponent } from './top-login/top-login.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
   imports: [
     TranslatePipe,
-    MatSidenavModule,
-    SignSideComponent
-],
+    // MatSidenavModule,
+    SignSideComponent,
+  ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
