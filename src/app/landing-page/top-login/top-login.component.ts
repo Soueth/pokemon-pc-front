@@ -1,62 +1,30 @@
-import { Component } from '@angular/core';
-import { Menubar } from 'primeng/menubar';
-import {MatIconModule} from '@angular/material/icon';
+import { Component, Input, output, OutputEmitterRef } from '@angular/core';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { gameIdCard } from '@ng-icons/game-icons'
+import { featherLogIn } from '@ng-icons/feather-icons';
+import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
 
 @Component({
   selector: 'app-top-login',
   standalone: true,
   imports: [
     // Menubar,
-    MatIconModule,
+    // MatIconModule,
+    NgIcon,
+    TranslatePipe,
   ],
   templateUrl: './top-login.component.html',
-  styleUrl: './top-login.component.scss'
+  styleUrl: './top-login.component.scss',
+  viewProviders: [
+    provideIcons({ 
+        gameIdCard, 
+        featherLogIn,
+    })],
 })
 export class TopLoginComponent {
-  items = [
-    {
-        label: 'Home',
-        icon: 'pi pi-home'
-    },
-    {
-        label: 'Features',
-        icon: 'pi pi-star'
-    },
-    {
-        label: 'Projects',
-        icon: 'pi pi-search',
-        items: [
-            {
-                label: 'Components',
-                icon: 'pi pi-bolt'
-            },
-            {
-                label: 'Blocks',
-                icon: 'pi pi-server'
-            },
-            {
-                label: 'UI Kit',
-                icon: 'pi pi-pencil'
-            },
-            {
-                label: 'Templates',
-                icon: 'pi pi-palette',
-                items: [
-                    {
-                        label: 'Apollo',
-                        icon: 'pi pi-palette'
-                    },
-                    {
-                        label: 'Ultima',
-                        icon: 'pi pi-palette'
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        label: 'Contact',
-        icon: 'pi pi-envelope'
-    }
-]
+    @Input() opened: boolean = false;
+
+    openedChange: OutputEmitterRef<boolean> = output<boolean>();
+
+    openBar = () => this.openedChange.emit(true);
 }

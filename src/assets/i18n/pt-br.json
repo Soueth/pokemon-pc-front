@@ -1,7 +1,11 @@
 {
+  "login": "Entrar",
+  "sign-up": "Cadastrar",
+  "alt": {
+    "landing-page": "Imagem da tela inicial"
+  },
   "landing-page": {
     "title": "Pokemon-PC",
     "sub-title": "Um projeto criado por "
-  },
-  "sign-in": "Login"
+  }
 }

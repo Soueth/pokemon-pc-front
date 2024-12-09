@@ -14,9 +14,5 @@ import { TopLoginComponent } from '../top-login/top-login.component';
   styleUrl: './sign-side.component.scss'
 })
 export class SignSideComponent {
-  @Input() opened: boolean = false;
-
-  openedChange: OutputEmitterRef<boolean> = output<boolean>();
-
-  closeBar = () => this.openedChange.emit(false);
+  opened: boolean = false;
 }

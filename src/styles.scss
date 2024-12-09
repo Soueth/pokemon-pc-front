@@ -2,6 +2,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+// Colors
+$primary-color: #6699CC; // Steelblue 
+$secondary-color: #FF3C38; // Tomato
+$tertiary-color: #FF8C42; // Coral
+
 :host {
   margin: 0;
   padding: 0;
@@ -43,6 +48,35 @@ h3 {
     height: 100%;
   }
 }
+
+// Estilos de cores globais
+.color-primary {
+  color: $primary-color;
+}
+
+.color-secondary {
+  color: $secondary-color;
+}
+
+.color-tertiary {
+  color: $tertiary-color;
+}
+
+.background-primary {
+  background-color: $primary-color;
+}
+
+.background-secondary {
+  background-color: $secondary-color;
+}
+
+.background-tertiary {
+  background-color: $tertiary-color;
+}
+
+// mb-0 {
+//   margin-bottom: 0 !important;
+// }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
