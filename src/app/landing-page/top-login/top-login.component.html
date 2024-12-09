@@ -1,12 +1,17 @@
 <div
-	class="w-100 sticky top-0 flex h-14 items-center justify-end gap-6 bg-white pr-14 shadow"
-	style="box-shadow: 0 0px 3px 9px #0000007f"
+	class="w-100 top-bar sticky top-0 flex h-14 items-center justify-end gap-6 bg-white pr-14"
 >
-  <span (click)="openBar()" class="font-bold flex items-center gap-2">
-    <ng-icon name="gameIdCard" size="1.4em"></ng-icon>
-    <p class="!mb-0">{{ "sign-up" | translate }}</p>
-  </span>
-	<span (click)="openBar()" class="color-primary font-bold flex items-center gap-2">
+	<span
+		(click)="openBar()"
+		class="color-primary flex cursor-pointer items-center gap-2 font-bold"
+	>
+		<ng-icon name="gameIdCard" size="1.4em"></ng-icon>
+		<p class="!mb-0">{{ "sign-up" | translate }}</p>
+	</span>
+	<span
+		(click)="openBar()"
+		class="color-primary flex cursor-pointer items-center gap-2 font-bold"
+	>
 		<ng-icon name="featherLogIn" size="1.4em"></ng-icon>
 		<p class="!mb-0">{{ "login" | translate }}</p>
 	</span>
