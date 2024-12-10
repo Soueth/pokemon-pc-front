@@ -5,7 +5,12 @@
     "landing-page": "Imagem da tela inicial"
   },
   "landing-page": {
-    "title": "Pokemon-PC",
-    "sub-title": "Um projeto criado por "
+    "title": "Poke Boxes",
+    "sub-title": "Um projeto criado por ",
+    "what-is": {
+      "header": "Do que se trata?",
+      "sub-title": "Um projeto de armazenamento e organização de seus pokemon",
+      "description": "é um site para armazenar e gerenciar pokemon, itens e equipes."
+    }
   }
 }
