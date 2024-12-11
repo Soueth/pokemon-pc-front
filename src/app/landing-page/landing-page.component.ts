@@ -22,8 +22,5 @@ export class LandingPageComponent {
 
   constructor(
     @Inject(AUTHOR_GITHUB) public authorGithub: string,
-    private langService: LanguageService,
-  ) {
-
-  }
+  ) {}
 }

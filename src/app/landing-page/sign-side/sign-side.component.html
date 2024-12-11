@@ -4,7 +4,40 @@
   <ng-content #conteudo></ng-content>
 
   <mat-drawer #drawer [opened]="opened" (closedStart)="opened = false" [autoFocus]="true" position="end" [mode]="'over'">
-    
+    <p-tabs value="0">
+      <p-tablist>
+        <p-tab value="0">{{ 'login' | translate }}</p-tab>
+        <p-tab value="1">{{ 'sign-up' | translate }}</p-tab>
+      </p-tablist>
+
+      <p-tabpanels>
+        <p-tabpanel value="0">
+          <ng-container *ngTemplateOutlet="login"></ng-container>
+        </p-tabpanel>
+
+        <p-tabpanel value="1">
+          <ng-container *ngTemplateOutlet="signUp"></ng-container>
+        </p-tabpanel>
+      </p-tabpanels>
+    </p-tabs>
   </mat-drawer>
 </mat-drawer-container>
+
+<ng-template #login>
+  <form class="columns-12 p-4" [formGroup]="formLogin" (ngSubmit)="onSubmit('login')">
+    <div>
+      <p-floatlabel variant="on">
+        <input pInputText type="text" formControlName="email" />
+        <label>{{ 'email' | translate }}</label>
+      </p-floatlabel>
+    </div>
+    <div>
+      
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #signUp>
+
+</ng-template>
 
