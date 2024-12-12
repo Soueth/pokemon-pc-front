@@ -1,11 +1,9 @@
+// Tailwind Css
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-// Colors
-$primary-color: #6699CC; // Steelblue 
-$secondary-color: #FF3C38; // Tomato
-$tertiary-color: #FF8C42; // Coral
+@import '@styles/colors.scss';
 
 :host {
   margin: 0;
@@ -62,6 +60,11 @@ h3 {
   color: $tertiary-color;
 }
 
+.color-tertiary-lighteen {
+  color: $tertiary-color-light;
+}
+
+// Estilos de background
 .background-primary {
   background-color: $primary-color;
 }
@@ -72,6 +75,10 @@ h3 {
 
 .background-tertiary {
   background-color: $tertiary-color;
+}
+
+.bg-light-gray {
+  background-color: $background-light-gray;
 }
 
 // mb-0 {

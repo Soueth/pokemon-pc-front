@@ -1,0 +1,43 @@
+@import '@styles/colors.scss';
+
+::ng-deep {
+    // Tab Login
+    .tab-login.p-tab-active {
+        color: $primary-color;
+        border-color: $primary-color;
+    }
+    .tab-login.p-tab:not(.p-tab-active) {
+        color: $primary-color-light;
+    }
+
+    // Tab Signup
+    .tab-signup.p-tab-active {
+        color: $secondary-color;
+        border-color: $secondary-color;   
+    }
+    .tab-signup.p-tab:not(.p-tab-active) {
+        color: $secondary-color-light;
+    }
+}
+
+/* Darkmode
+::ng-deep {
+    // Tab Login
+    .tab-login.p-tab-active {
+        color: $primary-color-light;
+        border-color: $primary-color-light;
+    }
+    .tab-login.p-tab:not(.p-tab-active) {
+        color: $font-blue-light;
+    }
+
+    // Tab Signup
+    .tab-signup.p-tab-active {
+        color: $secondary-color-light;
+        border-color: $secondary-color-light;   
+    }
+    .tab-signup.p-tab:not(.p-tab-active) {
+        color: $font-red-light;
+    }
+}
+**/
