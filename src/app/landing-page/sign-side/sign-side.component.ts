@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { TabsModule } from 'primeng/tabs';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
 import { FloatLabel } from 'primeng/floatlabel';
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-sign-side',
@@ -18,6 +19,7 @@ import { FloatLabel } from 'primeng/floatlabel';
     TranslatePipe,
     FloatLabel,
     ReactiveFormsModule,
+    NgTemplateOutlet,
   ],
   templateUrl: './sign-side.component.html',
   styleUrl: './sign-side.component.scss'

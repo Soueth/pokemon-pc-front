@@ -3,6 +3,9 @@
     "landing-page": "Imagem da tela inicial"
   },
   "email": "Email",
+  "password": "Senha",
+  "confirmPassword": "Confirmar senha",
+  "name": "Nome",
   "landing-page": {
     "title": "Poké Boxes",
     "sub-title": "Um projeto criado por ",

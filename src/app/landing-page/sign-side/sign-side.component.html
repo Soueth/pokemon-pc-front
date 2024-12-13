@@ -12,11 +12,11 @@
 
       <p-tabpanels>
         <p-tabpanel value="0">
-          <ng-container *ngTemplateOutlet="login"></ng-container>
+          <ng-container [ngTemplateOutlet]="login"></ng-container>
         </p-tabpanel>
 
         <p-tabpanel value="1">
-          <ng-container *ngTemplateOutlet="signUp"></ng-container>
+          <ng-container [ngTemplateOutlet]="signUp"></ng-container>
         </p-tabpanel>
       </p-tabpanels>
     </p-tabs>
@@ -24,20 +24,44 @@
 </mat-drawer-container>
 
 <ng-template #login>
-  <form class="columns-12 p-4" [formGroup]="formLogin" (ngSubmit)="onSubmit('login')">
-    <div>
-      <p-floatlabel variant="on">
-        <input pInputText type="text" formControlName="email" />
-        <label>{{ 'email' | translate }}</label>
-      </p-floatlabel>
-    </div>
-    <div>
-      
-    </div>
+  <form class="columns-12 p-4 space-x-4" [formGroup]="formLogin" (ngSubmit)="onSubmit('login')">
+    <p-floatlabel class="columns-12" variant="on">
+      <input pInputText type="text" formControlName="email" />
+      <label>{{ 'email' | translate }}</label>
+    </p-floatlabel>
+
+    <p-floatlabel class="columns-12" variant="on">
+      <input pInputText type="text" formControlName="password" />
+      <label>{{ 'password' | translate }}</label>
+    </p-floatlabel>
   </form>
 </ng-template>
 
 <ng-template #signUp>
+  <form class="columns-12 p-4 space-x-4" [formGroup]="formSignUp" (ngSubmit)="onSubmit('login')">
+    <div class="columns-12">
+      <p-floatlabel class="columns-6" variant="on">
+        <input pInputText type="text" formControlName="email" />
+        <label>{{ 'email' | translate }}</label>
+      </p-floatlabel>
 
+      <p-floatlabel class="columns-6" variant="on">
+        <input pInputText type="text" formControlName="email" />
+        <label>{{ 'email' | translate }}</label>
+      </p-floatlabel>
+    </div>
+
+    <div class="columns-12">
+      <p-floatlabel class="columns-12" variant="on">
+        <input pInputText type="text" formControlName="password" />
+        <label>{{ 'password' | translate }}</label>
+      </p-floatlabel>
+
+      <p-floatlabel class="columns-12" variant="on">
+        <input pInputText type="text" formControlName="confirmPassword" />
+        <label>{{ 'confirmPassword' | translate }}</label>
+      </p-floatlabel>
+    </div>
+  </form>
 </ng-template>
 
