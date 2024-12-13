@@ -6,8 +6,8 @@
   <mat-drawer #drawer [opened]="opened" (closedStart)="opened = false" [autoFocus]="true" position="end" [mode]="'over'">
     <p-tabs value="0">
       <p-tablist>
-        <p-tab value="0">{{ 'login' | translate }}</p-tab>
-        <p-tab value="1">{{ 'sign-up' | translate }}</p-tab>
+        <p-tab class="w-1/2 flex justify-center tab-login" value="0">{{ 'login' | translate }}</p-tab>
+        <p-tab class="w-1/2 flex justify-center tab-signup" value="1">{{ 'sign-up' | translate }}</p-tab>
       </p-tablist>
 
       <p-tabpanels>

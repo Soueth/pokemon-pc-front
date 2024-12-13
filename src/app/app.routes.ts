@@ -6,6 +6,6 @@ export const routes: Routes = [
     path: '',
     component: LandingPageComponent,
     pathMatch: 'full',
-    title: 'Pokemon PC',
+    title: 'Boxes',
   }
 ];
