@@ -8,6 +8,8 @@ import { TabsModule } from 'primeng/tabs';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
 import { FloatLabel } from 'primeng/floatlabel';
 import { NgTemplateOutlet } from '@angular/common';
+import { InputTextModule } from 'primeng/inputtext';
+import { FloatLabelModule } from 'primeng/floatlabel';
 
 @Component({
   selector: 'app-sign-side',
@@ -17,7 +19,8 @@ import { NgTemplateOutlet } from '@angular/common';
     TopLoginComponent,
     TabsModule,
     TranslatePipe,
-    FloatLabel,
+    InputTextModule,
+    FloatLabelModule,
     ReactiveFormsModule,
     NgTemplateOutlet,
   ],
@@ -26,6 +29,7 @@ import { NgTemplateOutlet } from '@angular/common';
 })
 export class SignSideComponent {
   opened: boolean = false;
+  index = 0;
 
   formLogin: FormGroup;
   formSignUp: FormGroup;

@@ -10,24 +10,24 @@
     "title": "Poké Boxes",
     "sub-title": "Um projeto criado por ",
     "what-is": {
-      "header": "O que é?",
+      "header": "Do que se trata?",
       "sub-title": "Um 'SOMEONE'S PC' em formato de site",
-      "description": "Salve seus pokémon, itens, gerencie suas equipes, incluindo atributos como //IVs, EVs, naturezas, e mais!.// Retirar"
+      "content": "Salve seus pokémon, itens, gerencie suas equipes, incluindo atributos como //IVs, EVs, naturezas, e mais!.// Retirar"
     },
     "about-pokemon": {
       "header": "Pokémon",
       "sub-title": "Guarde seus monstrinhos com cada detalhe",
-      "description": "Cada pokemon tem seu tipo, espécie, natureza, apelido, habilidade, movimentos, EV (Valor de esforço) e IV (Valor individual), que marca como ele é. Guarde e gerencie cada um, para que não se esqueça."
+      "content": "Cada pokemon tem seu tipo, espécie, natureza, apelido, habilidade, movimentos, EV (Valor de esforço) e IV (Valor individual), que marca como ele é. Guarde e gerencie cada um, para que não se esqueça."
     },
     "about-items": {
       "header": "Itens",
       "sub-title": "Cada item é importante",
-      "description": "Cada item possui um nome, um tipo, um efeito, e pode ser usado para aumentar os atributos, curar, deixar feliz, ou até mesmo evoluir pokémon."
+      "content": "Cada item possui um nome, um tipo, um efeito, e pode ser usado para aumentar os atributos, curar, deixar feliz, ou até mesmo evoluir pokémon."
     },
     "about-teams": {
       "header": "Equipes",
       "sub-title": "Organize seus pokémons em uma equipe",
-      "description": "Cada equipe pode possuir até seis pokemon. Crie equipes balanceadas, em volta de uma estratégia, focadas em um tipo e tenha gráficos para te ajudar a pensar!"
+      "content": "Cada equipe pode possuir até seis pokemon. Crie equipes balanceadas, em volta de uma estratégia, focadas em um tipo e tenha gráficos para te ajudar a pensar!"
     }
   },
   "login": "Entrar",

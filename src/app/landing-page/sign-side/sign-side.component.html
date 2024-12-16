@@ -1,63 +1,65 @@
 <mat-drawer-container class="w-full h-full">
-  <app-top-login [(opened)]="opened" class="sticky z-10"></app-top-login>
+  <app-top-login [(opened)]="opened" (index)="index = $event" class="sticky z-10"></app-top-login>
 
   <ng-content #conteudo></ng-content>
 
-  <mat-drawer #drawer [opened]="opened" (closedStart)="opened = false" [autoFocus]="true" position="end" [mode]="'over'">
-    <p-tabs value="0">
+  <mat-drawer class="drawer-login !w-1/3" #drawer [opened]="opened" (closedStart)="opened = false" [autoFocus]="true" position="end" [mode]="'over'">
+    <p-tabs [value]="index">
       <p-tablist>
-        <p-tab class="w-1/2 flex justify-center tab-login" value="0">{{ 'login' | translate }}</p-tab>
-        <p-tab class="w-1/2 flex justify-center tab-signup" value="1">{{ 'sign-up' | translate }}</p-tab>
+        <p-tab class="w-1/2 flex justify-center tab-login" [value]="0">{{ 'login' | translate }}</p-tab>
+        <p-tab class="w-1/2 flex justify-center tab-signup" [value]="1">{{ 'sign-up' | translate }}</p-tab>
       </p-tablist>
 
       <p-tabpanels>
-        <p-tabpanel value="0">
+        <p-tabpanel [value]="0">
           <ng-container [ngTemplateOutlet]="login"></ng-container>
         </p-tabpanel>
 
-        <p-tabpanel value="1">
+        <p-tabpanel [value]="1">
           <ng-container [ngTemplateOutlet]="signUp"></ng-container>
         </p-tabpanel>
       </p-tabpanels>
     </p-tabs>
+    <span class="filling"></span>
   </mat-drawer>
 </mat-drawer-container>
 
 <ng-template #login>
-  <form class="columns-12 p-4 space-x-4" [formGroup]="formLogin" (ngSubmit)="onSubmit('login')">
-    <p-floatlabel class="columns-12" variant="on">
-      <input pInputText type="text" formControlName="email" />
+  <form class="w-full flex flex-col p-4 gap-4" [formGroup]="formLogin" (ngSubmit)="onSubmit('login')">
+    <p-floatlabel class="float-form-control" [variant]="'on'">
+      <input pInputText class="" type="text" formControlName="email" />
       <label>{{ 'email' | translate }}</label>
     </p-floatlabel>
 
-    <p-floatlabel class="columns-12" variant="on">
-      <input pInputText type="text" formControlName="password" />
+    <p-floatlabel class="float-form-control" [variant]="'on'">
+      <input pInputText class="" type="text" formControlName="password" />
       <label>{{ 'password' | translate }}</label>
     </p-floatlabel>
   </form>
+
 </ng-template>
 
 <ng-template #signUp>
-  <form class="columns-12 p-4 space-x-4" [formGroup]="formSignUp" (ngSubmit)="onSubmit('login')">
-    <div class="columns-12">
-      <p-floatlabel class="columns-6" variant="on">
-        <input pInputText type="text" formControlName="email" />
-        <label>{{ 'email' | translate }}</label>
+  <form class="w-full flex flex-col p-4 gap-4" [formGroup]="formSignUp" (ngSubmit)="onSubmit('login')">
+    <div class="w-full flex flex-col gap-4">
+      <p-floatlabel class="float-form-control" variant="on">
+        <input pInputText type="text" formControlName="name" />
+        <label>{{ 'name' | translate }}</label>
       </p-floatlabel>
 
-      <p-floatlabel class="columns-6" variant="on">
+      <p-floatlabel class="float-form-control" variant="on">
         <input pInputText type="text" formControlName="email" />
         <label>{{ 'email' | translate }}</label>
       </p-floatlabel>
     </div>
 
-    <div class="columns-12">
-      <p-floatlabel class="columns-12" variant="on">
+    <div class="w-full flex flex-col gap-4">
+      <p-floatlabel class="float-form-control" variant="on">
         <input pInputText type="text" formControlName="password" />
         <label>{{ 'password' | translate }}</label>
       </p-floatlabel>
 
-      <p-floatlabel class="columns-12" variant="on">
+      <p-floatlabel class="float-form-control" variant="on">
         <input pInputText type="text" formControlName="confirmPassword" />
         <label>{{ 'confirmPassword' | translate }}</label>
       </p-floatlabel>

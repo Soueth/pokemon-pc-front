@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: Roboto;
+  font-family: Inter;
 }
 
 h1 {
@@ -81,9 +81,15 @@ h3 {
   background-color: $background-light-gray;
 }
 
-// mb-0 {
-//   margin-bottom: 0 !important;
-// }
+// Forms
+.float-form-control {
+  > input {
+    width: 100%;
+    border-radius: 12px;
+    padding: 8px 12px;
+  }
+}
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

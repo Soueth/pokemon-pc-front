@@ -1,3 +1,5 @@
+@import '@styles/colors.scss';
+
 .overlayed {
   background-image: linear-gradient(#111111, #000 15%);
   box-shadow: 0 0 14px 2px;
@@ -19,19 +21,20 @@
   }
 }
 
-// .example-container {
-//   width: 500px;
-//   height: 300px;
-//   border: 1px solid rgba(0, 0, 0, 0.5);
-// }
+.page-ctn {
+  display: flex;
+  flex-direction: column;
+  min-height: 45%;
+  // justify-content: flex-end;
+  background-color: $background-1;
+}
 
-// .example-sidenav-content {
-//   display: flex;
-//   height: 100%;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-// .example-sidenav {
-//   padding: 20px;
-// }
+.cards-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 20rem;
+}

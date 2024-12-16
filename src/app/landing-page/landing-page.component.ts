@@ -5,6 +5,8 @@ import { AUTHOR_GITHUB } from '../common/constants';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SignSideComponent } from './sign-side/sign-side.component';
 import { TopLoginComponent } from './top-login/top-login.component';
+import { FloatLabel } from 'primeng/floatlabel';
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-landing-page',
@@ -13,6 +15,7 @@ import { TopLoginComponent } from './top-login/top-login.component';
     TranslatePipe,
     // MatSidenavModule,
     SignSideComponent,
+    NgTemplateOutlet,
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'

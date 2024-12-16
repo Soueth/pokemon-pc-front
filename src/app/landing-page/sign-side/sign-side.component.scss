@@ -15,9 +15,25 @@
         color: $secondary-color;
         border-color: $secondary-color;   
     }
+
     .tab-signup.p-tab:not(.p-tab-active) {
         color: $secondary-color-light;
     }
+
+    .drawer-login {
+        > div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.filling {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background: linear-gradient(149deg, white 0%, #f2f6fb 39%, $primary-color 80%, $secondary-color 100%);
+    margin-top: auto;
 }
 
 /* Darkmode
