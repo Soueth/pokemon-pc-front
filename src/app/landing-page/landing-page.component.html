@@ -19,15 +19,15 @@
 	</div>
 	<div class="page-ctn flex flex-col">
 		<div class="flex flex-col">
-			<div class="cards-info">
+			<div class="cards-info what-is flex flex-col flex-1 justify-center items-center">
 				<ng-container
 					*ngTemplateOutlet="
 						card;
 						context: {
-							title: 'landing-page.what-is.header' | translate,
+							title: 'landing-page.example.header' | translate,
 							subtitle:
-								'landing-page.what-is.sub-title' | translate,
-							content: 'landing-page.what-is.content' | translate,
+								'landing-page.example.sub-title' | translate,
+							content: 'landing-page.example.content' | translate,
 						}
 					"
 				></ng-container>
@@ -90,7 +90,7 @@
 	let-subtitle="subtitle"
 	let-content="content"
 >
-	<h1 for="title">{{ title }}</h1>
-	<h3>{{ subtitle }}</h3>
+	<h1 class="!mb-0 !font-extrabold" for="title">{{ title }}</h1>
+	<h3 style="font-size: 1.7rem;">{{ subtitle }}</h3>
 	<p>{{ content }}</p>
 </ng-template>

@@ -28,6 +28,11 @@
       "header": "Equipes",
       "sub-title": "Organize seus pokémons em uma equipe",
       "content": "Cada equipe pode possuir até seis pokemon. Crie equipes balanceadas, em volta de uma estratégia, focadas em um tipo e tenha gráficos para te ajudar a pensar!"
+    },
+    "example": {
+      "header": "Título",
+      "sub-title": "Aqui o subtítulo",
+      "content": "Mollit magna mollit mollit cillum dolore sint quis.Enim dolor ex exercitation tempor dolor nulla laborum. Commodo ad magna cillum cupidatat pariatur veniam.Dolore est nisi esse reprehenderit."
     }
   },
   "login": "Entrar",
