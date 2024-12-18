@@ -1,14 +1,5 @@
 @import '@styles/colors.scss';
 
-::ng-deep {
-  .drawer-login {
-    > div {
-        display: flex;
-        flex-direction: column;
-    }
-  }
-}
-
 // Placeholders
 %base-card {
   // height: 20rem;

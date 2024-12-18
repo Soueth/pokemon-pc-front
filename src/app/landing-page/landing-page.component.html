@@ -1,96 +1,19 @@
-<app-sign-side>
-	<div class="overlay items-center" style="height: 90%; width: 100%">
-		<div class="z-10 flex flex-col items-center">
-			<!-- <h1 class="text-white landing-title" style="font-size: 4.8rem">
-          <b class="font-bolder text-red-500 border-white" id="b1">Poke</b><b id="b2" class="font-bolder border-red-600">Boxes</b>
-        </h1> -->
-			<!-- <div class="flex gap-2 text-white">
-          <h3 class="sub-title-text">{{ "landing-page.sub-title" | translate }}</h3> -->
-			<!-- <a class="sub-title-text text-red-500" [href]="authorGithub"><b>Soueth</b></a> -->
-			<!-- </div> -->
-		</div>
-		<div class="overlayed">
-			<img
-				src="assets/images/public_face.jpeg"
-				loading="lazy"
-				[alt]="'alt.landing-page' | translate"
-			/>
-		</div>
-	</div>
-	<div class="page-ctn flex flex-col">
-		<div class="flex flex-col">
-			<div class="cards-info what-is flex flex-col flex-1 justify-center items-center">
-				<ng-container
-					*ngTemplateOutlet="
-						card;
-						context: {
-							title: 'landing-page.example.header' | translate,
-							subtitle:
-								'landing-page.example.sub-title' | translate,
-							content: 'landing-page.example.content' | translate,
-						}
-					"
-				></ng-container>
-			</div>
-			<!-- <div class="cards-info">
-				<ng-container
-					*ngTemplateOutlet="
-						card;
-						context: {
-							title: 'landing-page.about-pokemon.header' | translate,
-							subtitle:
-								'landing-page.about-pokemon.sub-title' | translate,
-							content: 'landing-page.about-pokemon.content' | translate,
-						}
-					"
-				></ng-container>
-			</div>
-			<div class="cards-info">
-				<ng-container
-					*ngTemplateOutlet="
-						card;
-						context: {
-							title: 'landing-page.about-items.header' | translate,
-							subtitle:
-								'landing-page.about-items.sub-title' | translate,
-							content: 'landing-page.about-items.content' | translate,
-						}
-					"
-				></ng-container>
-			</div>
-			<div class="cards-info">
-				<ng-container
-					*ngTemplateOutlet="
-						card;
-						context: {
-							title: 'landing-page.about-teams.header' | translate,
-							subtitle:
-								'landing-page.about-teams.sub-title' | translate,
-							content: 'landing-page.about-teams.content' | translate,
-						}
-					"
-				></ng-container>
-			</div> -->
-		</div>
-	</div>
+<mat-drawer-container #drawnerContainer class="h-full w-full">
+	<app-top-login [(opened)]="opened" (index)="index = $event" class="sticky z-10"></app-top-login>
 
-	<!-- <div class="mt-12">
-    <h2>{{ 'landing-page.what-is.header' | translate }}</h2>
-  </div> -->
-	<!-- 
-  <p-floatlabel>
-    <input id="username" pInputText />
-    <label for="username">Username</label>
-  </p-floatlabel> -->
-</app-sign-side>
+	<app-landing-content #landingContent></app-landing-content>
 
-<ng-template
-	#card
-	let-title="title"
-	let-subtitle="subtitle"
-	let-content="content"
->
-	<h1 class="!mb-0 !font-extrabold" for="title">{{ title }}</h1>
-	<h3 style="font-size: 1.7rem;">{{ subtitle }}</h3>
-	<p>{{ content }}</p>
-</ng-template>
+	<mat-drawer
+		class="drawer-login !w-1/3"
+		#drawer
+		[opened]="opened"
+		(closedStart)="opened = false"
+		[autoFocus]="true"
+		position="end"
+		[mode]="'over'"
+	>
+		<app-sign-side [index]="index"></app-sign-side>
+	</mat-drawer>
+</mat-drawer-container>
+
+

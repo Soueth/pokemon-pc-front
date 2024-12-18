@@ -1,0 +1,78 @@
+<div class="overlay items-center" style="height: 90%; width: 100%">
+	<div class="z-10 flex flex-col items-center">
+		<!-- <h1 class="text-white landing-title" style="font-size: 4.8rem">
+          <b class="font-bolder text-red-500 border-white" id="b1">Poke</b><b id="b2" class="font-bolder border-red-600">Boxes</b>
+        </h1> -->
+		<!-- <div class="flex gap-2 text-white">
+          <h3 class="sub-title-text">{{ "landing-page.sub-title" | translate }}</h3> -->
+		<!-- <a class="sub-title-text text-red-500" [href]="authorGithub"><b>Soueth</b></a> -->
+		<!-- </div> -->
+	</div>
+	<div class="overlayed">
+		<img src="assets/images/public_face.jpeg" [alt]="'alt.landing-page' | translate" />
+	</div>
+</div>
+<div class="page-ctn flex flex-col">
+	<div class="flex flex-col">
+		<div #cardWhatIs class="cards-info what-is flex flex-1 flex-col items-center justify-center">
+			<!-- [@slideInRight]="
+					cardsVisibility.get('cardWhatIs') ? 'visible' : 'hidden'
+				" -->
+			<ng-container
+				*ngTemplateOutlet="
+					card;
+					context: {
+						title: 'landing-page.example.header' | translate,
+						subtitle: 'landing-page.example.sub-title' | translate,
+						content: 'landing-page.example.content' | translate,
+					}
+				"
+			></ng-container>
+		</div>
+		<!-- <div class="cards-info">
+				<ng-container
+					*ngTemplateOutlet="
+						card;
+						context: {
+							title: 'landing-page.about-pokemon.header' | translate,
+							subtitle:
+								'landing-page.about-pokemon.sub-title' | translate,
+							content: 'landing-page.about-pokemon.content' | translate,
+						}
+					"
+				></ng-container>
+			</div>
+			<div class="cards-info">
+				<ng-container
+					*ngTemplateOutlet="
+						card;
+						context: {
+							title: 'landing-page.about-items.header' | translate,
+							subtitle:
+								'landing-page.about-items.sub-title' | translate,
+							content: 'landing-page.about-items.content' | translate,
+						}
+					"
+				></ng-container>
+			</div>
+			<div class="cards-info">
+				<ng-container
+					*ngTemplateOutlet="
+						card;
+						context: {
+							title: 'landing-page.about-teams.header' | translate,
+							subtitle:
+								'landing-page.about-teams.sub-title' | translate,
+							content: 'landing-page.about-teams.content' | translate,
+						}
+					"
+				></ng-container>
+			</div> -->
+	</div>
+</div>
+
+<ng-template #card let-title="title" let-subtitle="subtitle" let-content="content">
+	<h1 class="!mb-0 !font-extrabold" for="title">{{ title }}</h1>
+	<h3 style="font-size: 1.7rem">{{ subtitle }}</h3>
+	<p>{{ content }}</p>
+</ng-template>

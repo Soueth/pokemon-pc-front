@@ -29,10 +29,11 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 })
 export class SignSideComponent {
   opened: boolean = false;
-  index = 0;
-
+  
   formLogin: FormGroup;
   formSignUp: FormGroup;
+
+  index = input<number>(0);
 
   constructor(
     private formBuilder: FormBuilder,

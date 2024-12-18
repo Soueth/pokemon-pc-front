@@ -1,10 +1,10 @@
-<mat-drawer-container class="w-full h-full">
+<!-- <mat-drawer-container class="w-full h-full">
   <app-top-login [(opened)]="opened" (index)="index = $event" class="sticky z-10"></app-top-login>
 
   <ng-content #conteudo></ng-content>
 
-  <mat-drawer class="drawer-login !w-1/3" #drawer [opened]="opened" (closedStart)="opened = false" [autoFocus]="true" position="end" [mode]="'over'">
-    <p-tabs [value]="index">
+  <mat-drawer class="drawer-login !w-1/3" #drawer [opened]="opened" (closedStart)="opened = false" [autoFocus]="true" position="end" [mode]="'over'"> -->
+    <p-tabs [value]="index()">
       <p-tablist>
         <p-tab class="w-1/2 flex justify-center tab-login" [value]="0">{{ 'login' | translate }}</p-tab>
         <p-tab class="w-1/2 flex justify-center tab-signup" [value]="1">{{ 'sign-up' | translate }}</p-tab>
@@ -21,8 +21,8 @@
       </p-tabpanels>
     </p-tabs>
     <span class="filling"></span>
-  </mat-drawer>
-</mat-drawer-container>
+  <!-- </mat-drawer>
+</mat-drawer-container> -->
 
 <ng-template #login>
   <form class="w-full flex flex-col p-4 gap-4" [formGroup]="formLogin" (ngSubmit)="onSubmit('login')">
