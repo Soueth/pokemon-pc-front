@@ -1,7 +1,31 @@
 <mat-drawer-container #drawnerContainer class="h-full w-full">
-	<app-top-login [(opened)]="opened" (index)="index = $event" class="sticky z-10"></app-top-login>
+	<app-top-login
+		#topLogin
+		[(opened)]="opened"
+		(index)="index = $event"
+		class="sticky z-10"
+	></app-top-login>
 
-	<app-landing-content #landingContent></app-landing-content>
+	<div class="overlay items-center" style="height: 90%; width: 100%">
+		<div class="z-10 flex flex-col items-center">
+			<!-- <h1 class="text-white landing-title" style="font-size: 4.8rem">
+			  <b class="font-bolder text-red-500 border-white" id="b1">Poke</b><b id="b2" class="font-bolder border-red-600">Boxes</b>
+			</h1> -->
+			<!-- <div class="flex gap-2 text-white">
+			  <h3 class="sub-title-text">{{ "landing-page.sub-title" | translate }}</h3> -->
+			<!-- <a class="sub-title-text text-red-500" [href]="authorGithub"><b>Soueth</b></a> -->
+			<!-- </div> -->
+		</div>
+		<div class="overlayed">
+			<img src="assets/images/public_face.jpeg" [alt]="'alt.landing-page' | translate" />
+		</div>
+	</div>
+
+	@defer {
+		<app-landing-content #landingContent></app-landing-content>
+	} @placeholder {
+		<span></span>
+	}
 
 	<mat-drawer
 		class="drawer-login !w-1/3"
@@ -15,5 +39,3 @@
 		<app-sign-side [index]="index"></app-sign-side>
 	</mat-drawer>
 </mat-drawer-container>
-
-

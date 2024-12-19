@@ -1,74 +1,65 @@
-import { isPlatformBrowser, NgTemplateOutlet } from '@angular/common';
-import { Component, ElementRef, HostListener, Inject, NgZone, PLATFORM_ID, Renderer2, signal, ViewChild, WritableSignal } from '@angular/core';
-import { slideInRightAnimation } from 'src/app/common/animations';
-import { AUTHOR_GITHUB } from 'src/app/common/constants';
-import { TranslatePipe } from 'src/shared/pipes/translate.pipe';
-import { SignSideComponent } from '../sign-side/sign-side.component';
+import { NgTemplateOutlet } from "@angular/common";
+import {
+	Component,
+	ElementRef,
+	Inject,
+	signal,
+	ViewChild,
+	WritableSignal
+} from "@angular/core";
+import { slideInLeft, slideInRight } from "src/app/common/animations";
+import { AUTHOR_GITHUB } from "src/app/common/constants";
+import { TranslatePipe } from "src/shared/pipes/translate.pipe";
 
 @Component({
-  selector: 'app-landing-content',
-  standalone: true,
-  imports: [
-    // CommonModule,
-    TranslatePipe,
-    // MatSidenavModule,
-    NgTemplateOutlet,
-  ],
-  templateUrl: './landing-content.component.html',
-  styleUrl: './landing-content.component.scss',
-  animations: [slideInRightAnimation],
+	selector: "app-landing-content",
+	standalone: true,
+	imports: [
+		// CommonModule,
+		TranslatePipe,
+		// MatSidenavModule,
+		NgTemplateOutlet,
+	],
+	templateUrl: "./landing-content.component.html",
+	styleUrl: "./landing-content.component.scss",
+	animations: [slideInRight, slideInLeft],
 })
 export class LandingContentComponent {
-  whatIsVisible = signal(false);
-  aboutPokeVisible = signal(false);
-  aboutItemsVisible = signal(false);
-  abountTeamsVisible = signal(false);
+	whatIsVisible = signal(false);
+	aboutPokeVisible = signal(false);
+	aboutItemsVisible = signal(false);
+	abountTeamsVisible = signal(false);
 
-  private scrollEventListener?: () => void;
+	@ViewChild("cardWhatIs", { static: true }) cardWhatIs!: ElementRef<HTMLDivElement>;
+	@ViewChild("cardPokemon", { static: true }) cardPokemon!: ElementRef<HTMLDivElement>;
+	@ViewChild("cardItems", { static: true }) cardItems!: ElementRef<HTMLDivElement>;
+	@ViewChild("cardTeams", { static: true }) cardTeams!: ElementRef<HTMLDivElement>;
 
-  @ViewChild("cardWhatIs", { static: true }) cardWhatIs!: ElementRef<HTMLDivElement>;
+	constructor(
+		@Inject(AUTHOR_GITHUB) public authorGithub: string,
+	) {}
 
-  constructor(
-    private renderer2: Renderer2,
-    @Inject(PLATFORM_ID) private platformId: any,
-    @Inject(AUTHOR_GITHUB) public authorGithub: string,
-    private zone: NgZone,
-  ) {}
+	onScroll(windowHeight: number): void {
+		this.verifyCardVisibility(this.whatIsVisible, this.cardWhatIs, windowHeight);
+		this.verifyCardVisibility(this.aboutPokeVisible, this.cardPokemon, windowHeight);
+		this.verifyCardVisibility(this.aboutItemsVisible, this.cardItems, windowHeight);
+		this.verifyCardVisibility(this.abountTeamsVisible, this.cardTeams, windowHeight);
+	}
 
-  ngOnInit(): void {
-    // if (isPlatformBrowser(this.platformId)) {
-    //   this.scrollEventListener = this.renderer2.listen('window', 'scroll', () => {
-    //     console.log('scroll detectado dentro do Angular');
-    //   });
-    // }
-  }
+	private verifyCardVisibility(
+		visibilty: WritableSignal<boolean>,
+		card: ElementRef<HTMLDivElement>,
+		windowHeight: number,
+	) {
+		if (visibilty() || !card) return;
 
-  ngOnDestroy(): void {
-    if (this.scrollEventListener) {
-      this.scrollEventListener();
-    }
-  }
+		const element = card.nativeElement;
 
-  onScroll(target: any): void {
-    const windowHeight = document.documentElement.clientHeight || 0;
+		if (element) {
+			const rect = element.getBoundingClientRect();
+			const inView = rect.top <= windowHeight && rect.bottom >= 0;
 
-    this.verifyCardVisibility(this.whatIsVisible, this.cardWhatIs, windowHeight);
-  };
-
-  private verifyCardVisibility(
-    visibilty: WritableSignal<boolean>,
-    card: ElementRef<HTMLDivElement>,
-    windowHeight: number,
-  ) {
-    if (!visibilty() || !card) return;
-
-    const element = card.nativeElement;
-
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      const inView = rect.top <= windowHeight && rect.bottom >= 0;
-
-      if (inView) visibilty.set(true);
-    }
-  }
+			if (inView) visibilty.set(true);
+		}
+	}
 }

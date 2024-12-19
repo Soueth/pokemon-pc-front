@@ -1,15 +1,14 @@
-import { AuthService } from './../../../shared/services/auth.service';
-import { ILogin, ISignUp, SignTypes } from './../landing-page.types';
-import { Component, Input, input, InputSignal, Output, output, OutputEmitterRef, Signal } from '@angular/core';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { TopLoginComponent } from '../top-login/top-login.component';
+import { NgTemplateOutlet } from '@angular/common';
+import { Component, input } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { InputTextModule } from 'primeng/inputtext';
 import { TabsModule } from 'primeng/tabs';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
-import { FloatLabel } from 'primeng/floatlabel';
-import { NgTemplateOutlet } from '@angular/common';
-import { InputTextModule } from 'primeng/inputtext';
-import { FloatLabelModule } from 'primeng/floatlabel';
+import { TopLoginComponent } from '../top-login/top-login.component';
+import { AuthService } from './../../../shared/services/auth.service';
+import { ILogin, ISignUp, SignTypes } from './../landing-page.types';
 
 @Component({
   selector: 'app-sign-side',

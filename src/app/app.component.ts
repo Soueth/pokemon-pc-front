@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { LanguageService } from '../shared/services/language.service';
 import { RouterOutlet } from '@angular/router';
+import { LanguageService } from '../shared/services/language.service';
 import { GlobalConstants } from './common/constants';
 
 @Component({
@@ -14,7 +14,7 @@ import { GlobalConstants } from './common/constants';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'pokemon-pc-front';
+  title = 'boxes';
 
   constructor(private langService: LanguageService) {
     this.langService.setLanguage('pt-br');

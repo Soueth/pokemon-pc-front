@@ -1,37 +1,24 @@
-import {
-	AfterViewInit,
-	Component,
-	ElementRef,
-	HostListener,
-	Inject,
-	OnDestroy,
-	OnInit,
-	PLATFORM_ID,
-	Renderer2,
-	Signal,
-	signal,
-	ViewChild,
-	WritableSignal,
-} from "@angular/core";
-import { TranslatePipe } from "../../shared/pipes/translate.pipe";
-import { LanguageService } from "../../shared/services/language.service";
-import { AUTHOR_GITHUB } from "../common/constants";
+import { Component, ElementRef, Inject, OnInit, Renderer2, ViewChild } from "@angular/core";
 import { MatSidenavModule } from "@angular/material/sidenav";
+import { TranslatePipe } from "src/shared/pipes/translate.pipe";
+import { AUTHOR_GITHUB } from "../common/constants";
+import { LandingContentComponent } from "./landing-content/landing-content.component";
 import { SignSideComponent } from "./sign-side/sign-side.component";
 import { TopLoginComponent } from "./top-login/top-login.component";
-import { FloatLabel } from "primeng/floatlabel";
-import { CommonModule, isPlatformBrowser, NgTemplateOutlet } from "@angular/common";
-import { slideInRightAnimation } from "../common/animations";
-import { fromEvent } from "rxjs";
-import { LandingContentComponent } from "./landing-content/landing-content.component";
 
 @Component({
 	selector: "app-landing-page",
 	standalone: true,
-	imports: [MatSidenavModule, TopLoginComponent, SignSideComponent, LandingContentComponent],
+	imports: [
+		MatSidenavModule,
+		TopLoginComponent,
+		SignSideComponent,
+		LandingContentComponent,
+		TranslatePipe,
+	],
 	templateUrl: "./landing-page.component.html",
 	styleUrl: "./landing-page.component.scss",
-	animations: [slideInRightAnimation],
+	animations: [],
 })
 export class LandingPageComponent implements OnInit {
 	opened: boolean = false;
@@ -40,14 +27,18 @@ export class LandingPageComponent implements OnInit {
 	@ViewChild("drawnerContainer", { static: true, read: ElementRef }) drawnerContainer!: ElementRef;
 	@ViewChild("landingContent") landingContent!: LandingContentComponent;
 
-	constructor(private renderer: Renderer2) {}
+	constructor(
+		@Inject(AUTHOR_GITHUB) public authorGithub: string,
+		private renderer: Renderer2,
+	) {}
 
 	ngOnInit(): void {
-		const container = this.drawnerContainer.nativeElement.querySelector('.mat-drawer-content');
-		if (!container) return;
+		const content = this.drawnerContainer.nativeElement.querySelector(".mat-drawer-content");
 
-		this.renderer.listen(container, "scroll", () => {
-			console.log("Scroll detectado no mat-drawer-container");
+		if (!content) return;
+
+		this.renderer.listen(content, "scroll", () => {
+			this.landingContent.onScroll(content.clientHeight);
 		});
 	}
 	// whatIsVisible = signal(false);

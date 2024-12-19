@@ -27,6 +27,10 @@
   }
 }
 
+.mat-drawer-container {
+  background-color: $background-1;
+}
+
 .overlayed {
   background-image: linear-gradient(#111111, #000 15%);
   box-shadow: 0 0 14px 2px;
@@ -48,42 +52,42 @@
   }
 }
 
-.page-ctn {
-  display: flex;
-  flex-direction: column;
-  margin-top: 45%;
-  padding: 8%;
-  background-color: $background-1;
-}
+// .page-ctn {
+//   display: flex;
+//   flex-direction: column;
+//   margin-top: 45%;
+//   padding: 8%;
+//   background-color: $background-1;
+// }
 
-.cards-info {
-  &.what-is {
-    @extend %base-card;
-    background-color: $primary-color-lighteen;
-    border: solid 6px $primary-color;
-    box-shadow: -8px 6px 5px 1px $primary-color;
-  }
+// .cards-info {
+//   &.what-is {
+//     @extend %base-card;
+//     background-color: $primary-color-lighteen;
+//     border: solid 6px $primary-color;
+//     box-shadow: -8px 6px 5px 1px $primary-color;
+//   }
 
-  &.about-pokemon {
-    @extend %base-card;
-    margin-left: auto;
-    background-color: $font-red-light;
-    border: solid 6px $secondary-color;
-    box-shadow: -8px 6px 5px 1px $secondary-color;
-  }
+//   &.about-pokemon {
+//     @extend %base-card;
+//     margin-left: auto;
+//     background-color: $font-red-light;
+//     border: solid 6px $secondary-color;
+//     box-shadow: -8px 6px 5px 1px $secondary-color;
+//   }
   
-  &.about-items {
-    @extend %base-card;
-    background-color: $primary-color-lighteen;
-    border: solid 6px $primary-color;
-    box-shadow: -8px 6px 5px 1px $primary-color;
-  }
+//   &.about-items {
+//     @extend %base-card;
+//     background-color: $primary-color-lighteen;
+//     border: solid 6px $primary-color;
+//     box-shadow: -8px 6px 5px 1px $primary-color;
+//   }
   
-  &.about-teams {
-    @extend %base-card;
-    margin-left: auto;
-    background-color: $font-red-light;
-    border: solid 6px $secondary-color;
-    box-shadow: -8px 6px 5px 1px $secondary-color;
-  }
-}
+//   &.about-teams {
+//     @extend %base-card;
+//     margin-left: auto;
+//     background-color: $font-red-light;
+//     border: solid 6px $secondary-color;
+//     box-shadow: -8px 6px 5px 1px $secondary-color;
+//   }
+// }
