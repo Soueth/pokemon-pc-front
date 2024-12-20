@@ -1,55 +1,74 @@
-@import '@styles/colors.scss';
+@import "@styles/colors.scss";
 
-::ng-deep {
-  .drawer-login {
-    > div {
-        display: flex;
-        flex-direction: column;
-    }
-  }
+// html, body, mat-drawer-container {
+//   height: 100%;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// mat-drawer {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+// }
+
+// ::ng-deep {
+	// .drawer-login {
+	// 	> div {
+	// 		> app-sign-side {
+  //       display: flex;
+	// 		  flex-direction: column;
+  //     }
+	// 	}
+	// }
+// }
+
+app-sign-side {
+  display: flex;
+  flex-direction: column;
 }
 
 // Placeholders
 %base-card {
-  // height: 20rem;
-  padding: 2rem;
-  border-radius: 48px;
-  width: 70%;
+	// height: 20rem;
+	padding: 2rem;
+	border-radius: 48px;
+	width: 70%;
 
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-1rem);
-    transition: transform 0.2s ease-out;
-  }
-  &:not(:hover) {
-    transform: translateY(0);
-    transition: transform 0.2s ease-out;
-  }
+	&:hover {
+		cursor: pointer;
+		transform: translateY(-1rem);
+		transition: transform 0.2s ease-out;
+	}
+	&:not(:hover) {
+		transform: translateY(0);
+		transition: transform 0.2s ease-out;
+	}
 }
 
 .mat-drawer-container {
-  background-color: $background-1;
+	background-color: $background-1;
 }
 
 .overlayed {
-  background-image: linear-gradient(#111111, #000 15%);
-  box-shadow: 0 0 14px 2px;
+	background-image: linear-gradient(#111111, #000 15%);
+	box-shadow: 0 0 14px 2px;
 }
 
 .sub-title-text {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  font-weight: 400;
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+	font-weight: 400;
 }
 
 .landing-title {
-  #b1 {
-    text-shadow: 0 0 14px red;
-  }
+	#b1 {
+		text-shadow: 0 0 14px red;
+	}
 
-  #b2 {
-    text-shadow: 0 0 14px white;
-  }
+	#b2 {
+		text-shadow: 0 0 14px white;
+	}
 }
 
 // .page-ctn {
@@ -75,14 +94,14 @@
 //     border: solid 6px $secondary-color;
 //     box-shadow: -8px 6px 5px 1px $secondary-color;
 //   }
-  
+
 //   &.about-items {
 //     @extend %base-card;
 //     background-color: $primary-color-lighteen;
 //     border: solid 6px $primary-color;
 //     box-shadow: -8px 6px 5px 1px $primary-color;
 //   }
-  
+
 //   &.about-teams {
 //     @extend %base-card;
 //     margin-left: auto;

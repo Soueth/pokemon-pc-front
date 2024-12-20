@@ -1,28 +1,20 @@
-<!-- <mat-drawer-container class="w-full h-full">
-  <app-top-login [(opened)]="opened" (index)="index = $event" class="sticky z-10"></app-top-login>
+<p-tabs [value]="index()">
+  <p-tablist>
+    <p-tab class="w-1/2 flex justify-center tab-signup" [value]="0">{{ 'sign-up' | translate }}</p-tab>
+    <p-tab class="w-1/2 flex justify-center tab-login" [value]="1">{{ 'login' | translate }}</p-tab>
+  </p-tablist>
 
-  <ng-content #conteudo></ng-content>
+  <p-tabpanels>
+    <p-tabpanel [value]="0">
+      <ng-container [ngTemplateOutlet]="signUp"></ng-container>
+    </p-tabpanel>
 
-  <mat-drawer class="drawer-login !w-1/3" #drawer [opened]="opened" (closedStart)="opened = false" [autoFocus]="true" position="end" [mode]="'over'"> -->
-    <p-tabs [value]="index()">
-      <p-tablist>
-        <p-tab class="w-1/2 flex justify-center tab-login" [value]="0">{{ 'login' | translate }}</p-tab>
-        <p-tab class="w-1/2 flex justify-center tab-signup" [value]="1">{{ 'sign-up' | translate }}</p-tab>
-      </p-tablist>
-
-      <p-tabpanels>
-        <p-tabpanel [value]="0">
-          <ng-container [ngTemplateOutlet]="login"></ng-container>
-        </p-tabpanel>
-
-        <p-tabpanel [value]="1">
-          <ng-container [ngTemplateOutlet]="signUp"></ng-container>
-        </p-tabpanel>
-      </p-tabpanels>
-    </p-tabs>
-    <span class="filling"></span>
-  <!-- </mat-drawer>
-</mat-drawer-container> -->
+    <p-tabpanel [value]="1">
+      <ng-container [ngTemplateOutlet]="login"></ng-container>
+    </p-tabpanel>
+  </p-tabpanels>
+</p-tabs>
+<span class="filling w-full h-full mt-auto flex-1"></span>
 
 <ng-template #login>
   <form class="w-full flex flex-col p-4 gap-4" [formGroup]="formLogin" (ngSubmit)="onSubmit('login')">
