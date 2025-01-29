@@ -1,28 +1,5 @@
 @import "@styles/colors.scss";
 
-// html, body, mat-drawer-container {
-//   height: 100%;
-//   margin: 0;
-//   padding: 0;
-// }
-
-// mat-drawer {
-//   display: flex;
-//   flex-direction: column;
-//   height: 100%;
-// }
-
-// ::ng-deep {
-	// .drawer-login {
-	// 	> div {
-	// 		> app-sign-side {
-  //       display: flex;
-	// 		  flex-direction: column;
-  //     }
-	// 	}
-	// }
-// }
-
 app-sign-side {
   display: flex;
   flex-direction: column;
@@ -70,43 +47,3 @@ app-sign-side {
 		text-shadow: 0 0 14px white;
 	}
 }
-
-// .page-ctn {
-//   display: flex;
-//   flex-direction: column;
-//   margin-top: 45%;
-//   padding: 8%;
-//   background-color: $background-1;
-// }
-
-// .cards-info {
-//   &.what-is {
-//     @extend %base-card;
-//     background-color: $primary-color-lighteen;
-//     border: solid 6px $primary-color;
-//     box-shadow: -8px 6px 5px 1px $primary-color;
-//   }
-
-//   &.about-pokemon {
-//     @extend %base-card;
-//     margin-left: auto;
-//     background-color: $font-red-light;
-//     border: solid 6px $secondary-color;
-//     box-shadow: -8px 6px 5px 1px $secondary-color;
-//   }
-
-//   &.about-items {
-//     @extend %base-card;
-//     background-color: $primary-color-lighteen;
-//     border: solid 6px $primary-color;
-//     box-shadow: -8px 6px 5px 1px $primary-color;
-//   }
-
-//   &.about-teams {
-//     @extend %base-card;
-//     margin-left: auto;
-//     background-color: $font-red-light;
-//     border: solid 6px $secondary-color;
-//     box-shadow: -8px 6px 5px 1px $secondary-color;
-//   }
-// }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pokemon-pc-front": {
+    "PokemonPc-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/pokemon-pc-front",
+            "outputPath": "dist/Pokemon-Pc-Front",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -49,8 +49,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -68,14 +68,23 @@
           },
           "defaultConfiguration": "production"
         },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "browserTarget": "Pokemon-Pc-Front:build:production",
+            "routes": [
+              "/"
+            ]
+          }
+        },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "pokemon-pc-front:build:production"
+              "buildTarget": "Pokemon-Pc-Front:build:production"
             },
             "development": {
-              "buildTarget": "pokemon-pc-front:build:development"
+              "buildTarget": "Pokemon-Pc-Front:build:development"
             }
           },
           "defaultConfiguration": "development"

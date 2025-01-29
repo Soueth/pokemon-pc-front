@@ -1,40 +1,47 @@
 {
-  "alt": {
-    "landing-page": "Imagem da tela inicial"
-  },
-  "email": "Email",
-  "password": "Senha",
-  "confirmPassword": "Confirmar senha",
-  "name": "Nome",
-  "landing-page": {
-    "title": "Poké Boxes",
-    "sub-title": "Um projeto criado por ",
-    "what-is": {
-      "header": "Do que se trata?",
-      "sub-title": "Um 'SOMEONE'S PC' em formato de site",
-      "content": "Salve seus pokémon, itens, gerencie suas equipes, incluindo atributos como //IVs, EVs, naturezas, e mais!.// Retirar"
+    "alt": {
+        "landing-page": "Imagem da tela inicial"
     },
-    "about-pokemon": {
-      "header": "Pokémon",
-      "sub-title": "Guarde seus monstrinhos com cada detalhe",
-      "content": "Cada pokemon tem seu tipo, espécie, natureza, apelido, habilidade, movimentos, EV (Valor de esforço) e IV (Valor individual), que marca como ele é. Guarde e gerencie cada um, para que não se esqueça."
+    "email": "Email",
+    "password": "Senha",
+    "confirmPassword": "Confirmar senha",
+    "name": "Nome",
+    "landing-page": {
+        "title": "Poké Boxes",
+        "sub-title": "Um projeto criado por ",
+        "what-is": {
+        "header": "Do que se trata?",
+        "sub-title": "Um 'SOMEONE'S PC' em formato de site",
+        "content": "Salve seus pokémon, itens, gerencie suas equipes, incluindo atributos como //IVs, EVs, naturezas, e mais!.// Retirar"
+        },
+        "about-pokemon": {
+        "header": "Pokémon",
+        "sub-title": "Guarde seus monstrinhos com cada detalhe",
+        "content": "Cada pokemon tem seu tipo, espécie, natureza, apelido, habilidade, movimentos, EV (Valor de esforço) e IV (Valor individual), que marca como ele é. Guarde e gerencie cada um, para que não se esqueça."
+        },
+        "about-items": {
+        "header": "Itens",
+        "sub-title": "Cada item é importante",
+        "content": "Cada item possui um nome, um tipo, um efeito, e pode ser usado para aumentar os atributos, curar, deixar feliz, ou até mesmo evoluir pokémon."
+        },
+        "about-teams": {
+        "header": "Equipes",
+        "sub-title": "Organize seus pokémons em uma equipe",
+        "content": "Cada equipe pode possuir até seis pokemon. Crie equipes balanceadas, em volta de uma estratégia, focadas em um tipo e tenha gráficos para te ajudar a pensar!"
+        },
+        "example": {
+        "header": "Título",
+        "sub-title": "Aqui o subtítulo",
+        "content": "Mollit magna mollit mollit cillum dolore sint quis.Enim dolor ex exercitation tempor dolor nulla laborum. Commodo ad magna cillum cupidatat pariatur veniam.Dolore est nisi esse reprehenderit."
+        }
     },
-    "about-items": {
-      "header": "Itens",
-      "sub-title": "Cada item é importante",
-      "content": "Cada item possui um nome, um tipo, um efeito, e pode ser usado para aumentar os atributos, curar, deixar feliz, ou até mesmo evoluir pokémon."
-    },
-    "about-teams": {
-      "header": "Equipes",
-      "sub-title": "Organize seus pokémons em uma equipe",
-      "content": "Cada equipe pode possuir até seis pokemon. Crie equipes balanceadas, em volta de uma estratégia, focadas em um tipo e tenha gráficos para te ajudar a pensar!"
-    },
-    "example": {
-      "header": "Título",
-      "sub-title": "Aqui o subtítulo",
-      "content": "Mollit magna mollit mollit cillum dolore sint quis.Enim dolor ex exercitation tempor dolor nulla laborum. Commodo ad magna cillum cupidatat pariatur veniam.Dolore est nisi esse reprehenderit."
+    "login": "Entrar",
+    "sign-up": "Cadastrar",
+    "formErros": {
+        "required": "Campo obrigatório",
+        "email": "Email inválido",
+        "password": "Senha inválida",
+        "confirmPassword": "Senhas não conferem",
+        "name": "Nome inválido"
     }
-  },
-  "login": "Entrar",
-  "sign-up": "Cadastrar"
 }

@@ -5,7 +5,10 @@ import { AUTHOR_GITHUB } from "../common/constants";
 import { LandingContentComponent } from "./landing-content/landing-content.component";
 import { SignSideComponent } from "./sign-side/sign-side.component";
 import { TopLoginComponent } from "./top-login/top-login.component";
+import { NgOptimizedImage } from "@angular/common";
+import { UntilDestroy } from '@ngneat/until-destroy'
 
+@UntilDestroy({ checkProperties: true })
 @Component({
 	selector: "app-landing-page",
 	standalone: true,
@@ -15,6 +18,7 @@ import { TopLoginComponent } from "./top-login/top-login.component";
 		SignSideComponent,
 		LandingContentComponent,
 		TranslatePipe,
+    NgOptimizedImage,
 	],
 	templateUrl: "./landing-page.component.html",
 	styleUrl: "./landing-page.component.scss",

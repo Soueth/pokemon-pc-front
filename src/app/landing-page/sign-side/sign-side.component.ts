@@ -1,45 +1,48 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { TabsModule } from 'primeng/tabs';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
-import { TopLoginComponent } from '../top-login/top-login.component';
 import { AuthService } from './../../../shared/services/auth.service';
 import { ILogin, ISignUp, SignTypes } from './../landing-page.types';
+import { ButtonModule } from 'primeng/button';
+import { TooltipErrorComponent } from 'src/app/common/components/tooltip-error/tooltip-error.component';
 
 @Component({
   selector: 'app-sign-side',
   standalone: true,
   imports: [
     MatSidenavModule,
-    TopLoginComponent,
+    ButtonModule,
     TabsModule,
     TranslatePipe,
     InputTextModule,
     FloatLabelModule,
     ReactiveFormsModule,
     NgTemplateOutlet,
+    TooltipErrorComponent,
   ],
   templateUrl: './sign-side.component.html',
   styleUrl: './sign-side.component.scss'
 })
 export class SignSideComponent {
   opened: boolean = false;
-  
+
   formLogin: FormGroup;
   formSignUp: FormGroup;
 
   index = input<number>(0);
+  submitted = signal<boolean>(false);
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
   ) {
     this.formLogin = this.formBuilder.group({
-      email: [undefined, Validators.required],
+      email: [undefined, [Validators.required, Validators.email]],
       password: [undefined, Validators.required],
     })
 
@@ -52,6 +55,7 @@ export class SignSideComponent {
   }
 
   onSubmit(method: SignTypes) {
+    console.log('🚀  =>  file: sign-side.component.ts:55  =>  SignSideComponent  =>  onSubmit  =>  method:', method)
     if (method == 'login') {
       this.login();
       return;
@@ -67,6 +71,7 @@ export class SignSideComponent {
 
   login() {
     // TODO: Implement login logic
+    this.submitted.set(true);
     if (!this.formLogin.valid) return;
 
     const values: ILogin = this.formLogin.getRawValue();
@@ -75,7 +80,8 @@ export class SignSideComponent {
   }
 
   signUp() {
-    // TODO: Implement signup logic
+    console.log('🚀  =>  file: sign-side.component.ts:85  =>  SignSideComponent  =>  signUp  =>  this.formSignUp:', this.formSignUp)
+    this.submitted.set(true);
     if (!this.formSignUp.valid) return;
 
     const values: ISignUp = this.formSignUp.getRawValue();

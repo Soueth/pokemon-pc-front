@@ -12,6 +12,37 @@
   font-family: Inter;
 }
 
+%btn-base {
+  border-radius: 12px;
+  padding: .6rem 2rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+  &:hover {
+    opacity: 0.5;
+    transform: translateY(-1px);
+  }
+  &:active {
+    opacity: 1;
+    // $primary-color: darken($primary-color, 20%);
+    transform: translateY(0);
+  }
+}
+
+.btn {
+  @extend %btn-base;
+}
+
+.btn-primary {
+  @extend %btn-base;
+  background-color: $primary-color;
+  color: white;
+  &:active {
+    background-color: darken($primary-color, 20%);
+  }
+}
+
 h1 {
   font-size: 4rem;
   font-weight: 500;

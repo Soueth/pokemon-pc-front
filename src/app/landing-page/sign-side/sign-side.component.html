@@ -1,61 +1,98 @@
 <p-tabs [value]="index()">
-  <p-tablist>
-    <p-tab class="w-1/2 flex justify-center tab-signup" [value]="0">{{ 'sign-up' | translate }}</p-tab>
-    <p-tab class="w-1/2 flex justify-center tab-login" [value]="1">{{ 'login' | translate }}</p-tab>
-  </p-tablist>
+    <p-tablist>
+        <p-tab class="w-1/2 flex justify-center tab-signup" [value]="0">{{
+            "sign-up" | translate
+        }}</p-tab>
+        <p-tab class="w-1/2 flex justify-center tab-login" [value]="1">{{
+            "login" | translate
+        }}</p-tab>
+    </p-tablist>
 
-  <p-tabpanels>
-    <p-tabpanel [value]="0">
-      <ng-container [ngTemplateOutlet]="signUp"></ng-container>
-    </p-tabpanel>
+    <p-tabpanels>
+        <p-tabpanel [value]="0">
+            <ng-container [ngTemplateOutlet]="logo" />
+            <ng-container [ngTemplateOutlet]="signUp" />
+        </p-tabpanel>
 
-    <p-tabpanel [value]="1">
-      <ng-container [ngTemplateOutlet]="login"></ng-container>
-    </p-tabpanel>
-  </p-tabpanels>
+        <p-tabpanel [value]="1">
+            <ng-container [ngTemplateOutlet]="logo" />
+            <ng-container [ngTemplateOutlet]="login" />
+        </p-tabpanel>
+    </p-tabpanels>
 </p-tabs>
 <span class="filling w-full h-full mt-auto flex-1"></span>
 
 <ng-template #login>
-  <form class="w-full flex flex-col p-4 gap-4" [formGroup]="formLogin" (ngSubmit)="onSubmit('login')">
-    <p-floatlabel class="float-form-control" [variant]="'on'">
-      <input pInputText class="" type="text" formControlName="email" />
-      <label>{{ 'email' | translate }}</label>
-    </p-floatlabel>
+    <form
+        class="w-full flex flex-col items-center p-4 gap-4"
+        [formGroup]="formLogin"
+        (ngSubmit)="onSubmit('login')"
+    >
+        <div class="flex w-full gap-1">
+            <app-tooltip-error formControlName="email"></app-tooltip-error>
+            <p-floatlabel class="float-form-control w-full" [variant]="'on'">
+                <input pInputText type="text" formControlName="email" />
+                <label>{{ "email" | translate }}</label>
+            </p-floatlabel>
+        </div>
 
-    <p-floatlabel class="float-form-control" [variant]="'on'">
-      <input pInputText class="" type="text" formControlName="password" />
-      <label>{{ 'password' | translate }}</label>
-    </p-floatlabel>
-  </form>
+        <div class="flex w-full gap-1">
+            <app-tooltip-error formControlName="password"></app-tooltip-error>
+            <p-floatlabel class="float-form-control w-full" [variant]="'on'">
+                <input pInputText type="text" formControlName="password" />
+                <label>{{ "password" | translate }}</label>
+            </p-floatlabel>
+        </div>
 
+        <button type="submit" class="btn-primary !w-full mt-5">
+            {{ "login" | translate }}
+        </button>
+    </form>
 </ng-template>
 
 <ng-template #signUp>
-  <form class="w-full flex flex-col p-4 gap-4" [formGroup]="formSignUp" (ngSubmit)="onSubmit('login')">
-    <div class="w-full flex flex-col gap-4">
-      <p-floatlabel class="float-form-control" variant="on">
-        <input pInputText type="text" formControlName="name" />
-        <label>{{ 'name' | translate }}</label>
-      </p-floatlabel>
+    <form
+        class="w-full flex flex-col items-center p-4 gap-4"
+        [formGroup]="formSignUp"
+        (ngSubmit)="onSubmit('sign-up')"
+    >
+        <div class="w-full flex flex-col gap-4">
+            <p-floatlabel class="float-form-control" variant="on">
+                <input pInputText type="text" formControlName="name" />
+                <label>{{ "name" | translate }}</label>
+            </p-floatlabel>
 
-      <p-floatlabel class="float-form-control" variant="on">
-        <input pInputText type="text" formControlName="email" />
-        <label>{{ 'email' | translate }}</label>
-      </p-floatlabel>
+            <p-floatlabel class="float-form-control" variant="on">
+                <input pInputText type="text" formControlName="email" />
+                <label>{{ "email" | translate }}</label>
+            </p-floatlabel>
+        </div>
+
+        <div class="w-full flex flex-col gap-4">
+            <p-floatlabel class="float-form-control" variant="on">
+                <input pInputText type="text" formControlName="password" />
+                <label>{{ "password" | translate }}</label>
+            </p-floatlabel>
+
+            <p-floatlabel class="float-form-control" variant="on">
+                <input
+                    pInputText
+                    type="text"
+                    formControlName="confirmPassword"
+                />
+                <label>{{ "confirmPassword" | translate }}</label>
+            </p-floatlabel>
+        </div>
+
+        <button type="submit" class="btn-primary !w-full mt-5">
+            {{ "sign-up" | translate }}
+        </button>
+    </form>
+</ng-template>
+
+<ng-template #logo>
+    <div class="w-full flex flex-col mb-2 mt-3">
+        <img src="assets/images/logo1.jpg" class="h-36 object-contain" alt="logo">
     </div>
-
-    <div class="w-full flex flex-col gap-4">
-      <p-floatlabel class="float-form-control" variant="on">
-        <input pInputText type="text" formControlName="password" />
-        <label>{{ 'password' | translate }}</label>
-      </p-floatlabel>
-
-      <p-floatlabel class="float-form-control" variant="on">
-        <input pInputText type="text" formControlName="confirmPassword" />
-        <label>{{ 'confirmPassword' | translate }}</label>
-      </p-floatlabel>
-    </div>
-  </form>
 </ng-template>
 

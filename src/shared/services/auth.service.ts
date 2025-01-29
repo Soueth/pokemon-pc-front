@@ -13,15 +13,25 @@ export class AuthService {
         this.SERVER_URL = `${this.SERVER_URL}/auth`
     }
 
-    login(content: ILogin) {
-        // TODO: Implementar a rota no backend
+    private getCSRF() {
+        return lastValueFrom(
+            this.http.get(`${enviroment.apiUrl}/sanctum/csrf-cookie`)
+        );
+    }
+
+    async login(content: ILogin) {
+        await this.getCSRF();
+
         return lastValueFrom(
             this.http.post(`${this.SERVER_URL}/login`, content)
         );
     }
 
-    signup(content: ILogin) {
-        // TODO: Implementar a rota no backend
-        return (this.http.post(`${this.SERVER_URL}/signup`, content));
+    async signup(content: ILogin) {
+        await this.getCSRF();
+
+        return lastValueFrom(
+            this.http.post(`${this.SERVER_URL}/signup`, content)
+        );
     }
 }
