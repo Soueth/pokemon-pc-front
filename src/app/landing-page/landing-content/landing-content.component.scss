@@ -1,4 +1,4 @@
-@import '@styles/colors.scss';
+@import 'src/styles/colors.scss';
 
 // Placeholders
 %base-card {
@@ -62,14 +62,14 @@
     border: solid 6px $secondary-color;
     box-shadow: 8px 6px 5px 1px $secondary-color;
   }
-  
+
   // &.about-items {
   //   @extend %base-card;
   //   background-color: $primary-color-lighteen;
   //   border: solid 6px $primary-color;
   //   box-shadow: -8px 6px 5px 1px $primary-color;
   // }
-  
+
   // &.about-teams {
   //   @extend %base-card;
   //   margin-left: auto;

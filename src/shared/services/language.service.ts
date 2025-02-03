@@ -15,7 +15,7 @@ type LanguageCode = keyof typeof TRANSLATIONS;
 export class LanguageService {
   private currentLanguage: LanguageCode = 'pt-br';
 
-  constructor(private http: HttpClient) { };
+  constructor() { };
 
   setLanguage(lang: LanguageCode) {
 		if (TRANSLATIONS[lang]) {

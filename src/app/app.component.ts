@@ -14,7 +14,7 @@ import { GlobalConstants } from './common/constants';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'boxes';
+  title = 'Boxes';
 
   constructor(private langService: LanguageService) {
     this.langService.setLanguage('pt-br');

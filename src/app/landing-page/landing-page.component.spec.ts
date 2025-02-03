@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { LandingPageComponent } from './landing-page.component';
+import { CommonTesting, GlobalConstants } from '../common/constants';
 
 describe('LandingPageComponent', () => {
   let component: LandingPageComponent;
@@ -8,7 +10,8 @@ describe('LandingPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LandingPageComponent]
+      imports: [LandingPageComponent],
+      providers: CommonTesting.providers,
     })
     .compileComponents();
 

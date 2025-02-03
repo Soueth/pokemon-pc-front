@@ -1,4 +1,4 @@
-@import '@styles/colors.scss';
+@import 'src/styles/colors.scss';
 
 :host {
     min-height: 100%; /* Evitar colapsar */
@@ -15,7 +15,7 @@
             box-shadow: 0 0 0 0.2rem $primary-color-light;
         }
     }
-    
+
     // .tab-login.p-tab:not(.p-tab-active) {
     //     color: $primary-color-light;
     // }
@@ -24,7 +24,7 @@
     .tab-signup {
         &.p-tab-active {
             color: $secondary-color;
-            border-color: $secondary-color;   
+            border-color: $secondary-color;
         }
         &.p-tab:not(.p-disabled):focus-visible {
             box-shadow: 0 0 0 0.2rem $secondary-color-light;
@@ -43,7 +43,7 @@
         }
     }
 
-    
+
 }
 
 .filling {
@@ -68,7 +68,7 @@
     // Tab Signup
     .tab-signup.p-tab-active {
         color: $secondary-color-light;
-        border-color: $secondary-color-light;   
+        border-color: $secondary-color-light;
     }
     .tab-signup.p-tab:not(.p-tab-active) {
         color: $font-red-light;
