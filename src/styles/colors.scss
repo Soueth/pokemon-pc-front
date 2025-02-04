@@ -1,33 +1,36 @@
 // Main Colors
-$primary-color: #6699CC; // Danube 
+$primary-color: #6699CC; // Danube
 $secondary-color: #FF3C38; // Red Orange
 $tertiary-color: #8e70e0; // Medium Purple
 
-$other-color: #FF8C42; // Jaffa
+$jaffa-accent: #FF8C42;
 
-// Lighteen colors
-$primary-color-light: #91C6FF; // Jordy Blue
-$secondary-color-light: #FF8E8E; // Geraldine
-$tertiary-color-light: #E2D8FF; // Moon Raker
-$primary-color-lighteen: #DCE3EA; // Gainsboro
+// Light Colors
+$primary-light: #F8FAFC; // Jordy Blue
+$secondary-light: #FF8E8E; // Geraldine
+$tertiary-light: #E2D8FF; // Moon Raker
+$gainsboro-light: #DCE3EA;
 
-// Darkeen colors
-$secondary-color-dark: #380303; // Chocolate
+// Dark Colors
+$chocolate-dark: #380303;
 
 // Backgrounds
-$background-1: #262626; // Shark
-$black-background: #18181b; // Bunker
-$background-light-gray: #dddddd; // Alto
+$alabaster-bg-light: #FBFBFB; 
+$bg-dark: #262626; // Shark
+$bunker-bg-dark: #18181b;
+$bg-gray-light: #dddddd; // Alto
 
 // Main Font Colors
-$font-color: #27272a; // Shark
-$font-black: #000; // Black
+$shark-font-dark: #27272a;
+$black-font-dark: #000;
 
-// Font Colors (dark)
-$font-purple-dark: #18002E; // Black Rock
-$font-red-dark: #2E0000; // Sepia Black
+// Font Colors (Dark)
+$black-rock-font-dark: #18002E;
+$sepia-black-font-dark: #2E0000;
+$bunker-font-dark: #171719;
+$black-pearl-font-dark: #031727;
 
-// Font Colors (light)
-$font-red-light: #FFE7E7; // Pippin
-$font-blue-light: #C2D6EB; // Spindle
-$font-purple-light: #820082; // Violet Eggplant
+// Font Colors (Light)
+$pippin-font-light: #FFE7E7;
+$spindle-font-light: #C2D6EB;
+$violet-eggplant-font-light: #820082;

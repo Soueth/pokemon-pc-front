@@ -2,14 +2,14 @@ import { NgTemplateOutlet } from '@angular/common';
 import { Component, input, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { ButtonModule } from 'primeng/button';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { TabsModule } from 'primeng/tabs';
-import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
-import { AuthService } from './../../../shared/services/auth.service';
-import { ILogin, ISignUp, SignTypes } from './../landing-page.types';
-import { ButtonModule } from 'primeng/button';
 import { TooltipErrorComponent } from 'src/app/common/components/tooltip-error/tooltip-error.component';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
+import { ILogin, ISignUp, SignTypes } from './../landing-page.types';
 
 @Component({
   selector: 'app-sign-side',
@@ -55,7 +55,6 @@ export class SignSideComponent {
   }
 
   onSubmit(method: SignTypes) {
-    console.log('🚀  =>  file: sign-side.component.ts:55  =>  SignSideComponent  =>  onSubmit  =>  method:', method)
     if (method == 'login') {
       this.login();
       return;
@@ -80,12 +79,11 @@ export class SignSideComponent {
   }
 
   signUp() {
-    console.log('🚀  =>  file: sign-side.component.ts:85  =>  SignSideComponent  =>  signUp  =>  this.formSignUp:', this.formSignUp)
     this.submitted.set(true);
     if (!this.formSignUp.valid) return;
 
     const values: ISignUp = this.formSignUp.getRawValue();
 
-    this.authService.signup(values);
+    this.authService.signUp(values);
   }
 }

@@ -3,7 +3,7 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { InjectionToken, Provider } from '@angular/core';
 import { TestModuleMetadata } from '@angular/core/testing';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { AppComponent } from '../app.component';
+import { ActivatedRoute } from '@angular/router';
 
 // export const APP_CONFIG = new InjectionToken<AppConfig>("app.config");
 export const APP_URL = new InjectionToken<string>('APP_URL');
@@ -35,5 +35,6 @@ export const CommonTesting: TestModuleMetadata = {
         provideHttpClient(),
         provideHttpClientTesting(),
         provideAnimations(),
+        { provide: ActivatedRoute, useValue: {} },
     ],
 };

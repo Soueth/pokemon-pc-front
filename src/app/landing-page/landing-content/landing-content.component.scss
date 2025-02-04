@@ -44,13 +44,13 @@
   flex-direction: column;
   margin-top: 45%;
   padding: 8%;
-  background-color: $background-1;
+  background-color: $bg-dark;
 }
 
 .cards-info {
   &.card-blue {
     @extend %base-card;
-    background-color: $primary-color-lighteen;
+    background-color: $gainsboro-light;
     border: solid 6px $primary-color;
     box-shadow: -8px 6px 5px 1px $primary-color;
   }
@@ -58,14 +58,14 @@
   &.card-red {
     @extend %base-card;
     margin-left: auto;
-    background-color: $font-red-light;
+    background-color: $secondary-light;
     border: solid 6px $secondary-color;
     box-shadow: 8px 6px 5px 1px $secondary-color;
   }
 
   // &.about-items {
   //   @extend %base-card;
-  //   background-color: $primary-color-lighteen;
+  //   background-color: $gainsboro-light;
   //   border: solid 6px $primary-color;
   //   box-shadow: -8px 6px 5px 1px $primary-color;
   // }
@@ -73,8 +73,8 @@
   // &.about-teams {
   //   @extend %base-card;
   //   margin-left: auto;
-  //   background-color: $font-red-light;
-  //   border: solid 6px $secondary-color;
-  //   box-shadow: 8px 6px 5px 1px $secondary-color;
+  //   background-color: $secondary-light;
+  //   border: solid 6px $secondary-color
+  //   box-shadow: 8px 6px 5px 1px $secondary-color
   // }
 }

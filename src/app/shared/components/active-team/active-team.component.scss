@@ -1,0 +1,12 @@
+@import 'src/styles/colors.scss';
+
+:host {
+    width: 10%;
+    height: 100%;
+    box-shadow: 0 0 0.62px 0.01px;
+    position: sticky;
+    left: 0;
+    top: 0;
+    background-color: #f0f7ff;
+    display: inline-block;
+}

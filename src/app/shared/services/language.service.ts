@@ -1,10 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import ptBr from '../../assets/i18n/pt-br.json';
+import ptBr from 'src/assets/i18n/pt-br.json';
 
 const TRANSLATIONS = {
   'pt-br': ptBr,
+  'en': ptBr,
 }
 
 type LanguageCode = keyof typeof TRANSLATIONS;
@@ -14,6 +14,10 @@ type LanguageCode = keyof typeof TRANSLATIONS;
 })
 export class LanguageService {
   private currentLanguage: LanguageCode = 'pt-br';
+
+  public getCurrentLanguage(): LanguageCode {
+    return this.currentLanguage;
+  }
 
   constructor() { };
 

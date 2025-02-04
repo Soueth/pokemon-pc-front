@@ -1,16 +1,16 @@
-import { LanguageService } from './../../../../shared/services/language.service';
-import { ChangeDetectionStrategy, Component, computed, forwardRef, HostBinding, Signal, signal, WritableSignal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, forwardRef, HostBinding, signal, WritableSignal } from '@angular/core';
 import {
-    ControlValueAccessor,
-    NG_VALUE_ACCESSOR,
-    NG_VALIDATORS,
     AbstractControl,
+    ControlValueAccessor,
+    NG_VALIDATORS,
+    NG_VALUE_ACCESSOR,
     ValidationErrors,
 } from '@angular/forms';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { featherAlertCircle } from '@ng-icons/feather-icons';
 import { Tooltip } from 'primeng/tooltip';
-import { isEmpty } from '../../helpers/functions';
+import { LanguageService } from 'src/app/shared/services/language.service';
+import { isEmpty } from '../../utils/functions';
 
 @Component({
     selector: 'app-tooltip-error',

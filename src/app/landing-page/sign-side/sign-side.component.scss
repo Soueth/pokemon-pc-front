@@ -12,12 +12,12 @@
             border-color: $primary-color;
         }
         &.p-tab:not(.p-disabled):focus-visible {
-            box-shadow: 0 0 0 0.2rem $primary-color-light;
+            box-shadow: 0 0 0 0.2rem $primary-light;
         }
     }
 
     // .tab-login.p-tab:not(.p-tab-active) {
-    //     color: $primary-color-light;
+    //     color: $primary-light;
     // }
 
     // Tab Signup
@@ -27,13 +27,13 @@
             border-color: $secondary-color;
         }
         &.p-tab:not(.p-disabled):focus-visible {
-            box-shadow: 0 0 0 0.2rem $secondary-color-light;
+            box-shadow: 0 0 0 0.2rem $secondary-light;
         }
 
     }
 
     // .tab-signup.p-tab:not(.p-tab-active) {
-    //     color: $secondary-color-light;
+    //     color: $secondary-light;
     // }
 
     .drawer-login {
@@ -58,8 +58,8 @@
 ::ng-deep {
     // Tab Login
     .tab-login.p-tab-active {
-        color: $primary-color-light;
-        border-color: $primary-color-light;
+        color: $primary-light;
+        border-color: $primary-light;
     }
     .tab-login.p-tab:not(.p-tab-active) {
         color: $font-blue-light;
@@ -67,11 +67,11 @@
 
     // Tab Signup
     .tab-signup.p-tab-active {
-        color: $secondary-color-light;
-        border-color: $secondary-color-light;
+        color: $secondary-light;
+        border-color: $secondary-light;
     }
     .tab-signup.p-tab:not(.p-tab-active) {
-        color: $font-red-light;
+        color: $secondary-light;
     }
 }
 **/

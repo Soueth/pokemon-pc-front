@@ -1,6 +1,6 @@
 export const enviroment = {
     production: false,
-    apiUrl: 'http://localhost:8000',
+    apiUrl: 'http://localhost:5148',
     featureFlag: false,
     enableLogging: false,
 }
