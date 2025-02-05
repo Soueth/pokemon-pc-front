@@ -1,6 +1,14 @@
 @if (isLogged()) {
-    <app-top-menu></app-top-menu>
-    <app-active-team></app-active-team>
+    <app-top-menu />
 }
 
-<router-outlet />
+<div class="flex w-full h-full items-center" style="padding-top: 4%;">
+    @if (isLogged()) {
+        <app-active-team />
+    }
+
+    <div style="width: 86%; height: 90%; margin-left: 2%;">
+        <router-outlet />
+    </div>
+</div>
+<!-- class="bg-orange-600" style="width: 86%; height: 90%; margin-left: 2%; -->

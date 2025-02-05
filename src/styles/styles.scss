@@ -2,8 +2,10 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "primeicons/primeicons.css";
 
 @import "./colors.scss";
+@import "./icons.scss";
 
 :host {
 	margin: 0;

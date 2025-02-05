@@ -13,7 +13,7 @@ export const MenuItems: MenuItem[] = [
     },
     {
         label: 'Equipes',
-        icon: 'pi pi-group',
+        icon: 'pi pi-users',
         routerLink: ['/teams']
     },
     {

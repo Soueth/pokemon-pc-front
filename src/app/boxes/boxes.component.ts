@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { ActiveTeamComponent } from '../shared/components/active-team/active-team.component';
-import { TopMenuComponent } from '../shared/components/top-menu/top-menu.component';
+import { BoxComponent } from './box/box.component';
+import { BoxesFiltersComponent } from './boxes-filters/boxes-filters.component';
 
 @Component({
   selector: 'app-boxes',
   standalone: true,
   imports: [
-    TopMenuComponent,
-    ActiveTeamComponent,
+    BoxComponent,
+    BoxesFiltersComponent,
   ],
   templateUrl: './boxes.component.html',
   styleUrl: './boxes.component.scss'

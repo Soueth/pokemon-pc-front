@@ -1,5 +1,4 @@
 @import 'src/styles/colors.scss';
-@import 'src/styles/icons.scss';
 
 :host {
     position: fixed;
@@ -7,9 +6,12 @@
     width: 100%;
 }
 
+// Ħ   Variaveis   Ħ
+$primary-lighten: lighten($primary-color, 35%); // #e5f1fd
+
 ::ng-deep .top-menu-bar {
     > div.p-menubar.p-component {
-        background-color: lighten($primary-color, 35%); // #e5f1fd
+        background-color: $primary-lighten;
         box-shadow: 0 0 2px 0.2px;
         
         .p-menubar-item-content {
@@ -21,8 +23,12 @@
             }
         }
 
-        .p-menubar-item-content, .p-menubar-submenu-icon {
+        .p-menubar-item-content, .p-menubar-item-icon {
             color: $black-rock-font-dark;
+        }
+
+        .p-menubar-submenu {
+            background-color: $primary-lighten;
         }
     }
 }

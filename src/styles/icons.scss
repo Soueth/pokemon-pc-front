@@ -1,8 +1,10 @@
 .pokeball-icon {
-    background-image: url('../assets/icons/svg/pokeball-icon.svg');
-    background-size: cover;
-    width: 1rem;
-    height: 1rem;
+    mask: url('../assets/icons/svg/output-resize-image.svg');
+    -webkit-mask: url('../assets/icons/svg/output-resize-image.svg');
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    width: 24px;
+    height: 24px;
     display: inline-block;
-    vertical-align: middle;
+    background-color: currentColor;
 }
