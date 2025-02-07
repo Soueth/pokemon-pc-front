@@ -2,13 +2,11 @@ import { NgTemplateOutlet } from "@angular/common";
 import {
 	Component,
 	ElementRef,
-	Inject,
 	signal,
 	ViewChild,
 	WritableSignal
 } from "@angular/core";
 import { slideInLeft, slideInRight } from "src/app/common/animations";
-import { AUTHOR_GITHUB } from "src/app/common/constants";
 import { TranslatePipe } from "src/shared/pipes/translate.pipe";
 
 @Component({
@@ -36,7 +34,7 @@ export class LandingContentComponent {
 	@ViewChild("cardTeams", { static: true }) cardTeams!: ElementRef<HTMLDivElement>;
 
 	constructor(
-		@Inject(AUTHOR_GITHUB) public authorGithub: string,
+		// @Inject(AUTHOR_GITHUB) public authorGithub: string,
 	) {}
 
 	onScroll(windowHeight: number): void {

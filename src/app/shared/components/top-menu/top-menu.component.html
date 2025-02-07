@@ -1,1 +1,12 @@
-<p-menubar class="top-menu-bar" [model]="items" [autoHide]="true"></p-menubar>
+<p-menubar class="top-menu-bar" [model]="items" [autoHide]="true">
+	<ng-template #item let-item>
+		<a class="p-menuitem-link">
+			@if (item.icon) {
+				<ng-icon [name]="item.icon" class="p-menuitem-icon"></ng-icon>
+			} @else if (item.path) {
+				<img [src]="item.path" width="18" height="18" />
+			}
+			<span class="p-menuitem-text">{{ item.label }}</span>
+		</a>
+	</ng-template>
+</p-menubar>

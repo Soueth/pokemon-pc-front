@@ -29,6 +29,7 @@
         "@ng-icons/core": "^29.10.0",
         "@ng-icons/feather-icons": "^29.10.0",
         "@ng-icons/game-icons": "^29.10.0",
+        "@ng-icons/iconoir": "^30.2.0",
         "@ngneat/until-destroy": "^10.0.0",
         "@nguniversal/express-engine": "^7.0.1",
         "@ngx-translate/core": "^16.0.3",

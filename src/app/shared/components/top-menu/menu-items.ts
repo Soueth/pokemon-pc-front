@@ -1,33 +1,35 @@
 import { MenuItem } from "primeng/api";
+import { ICON_PATH } from "src/app/common/constants";
 
 export const MenuItems: MenuItem[] = [
     {
         label: 'Boxes',
-        icon: 'pokeball-icon',
+        icon: 'iconoirComputer',
         routerLink: ['/boxes']
     },
     {
         label: 'Itens',
-        icon: 'pi pi-shopping-cart', // https://icons8.com
-        routerLink: ['/items']
+        // icon: 'potion_icon', // https://icons8.com
+        routerLink: ['/items'],
+        path: `${ICON_PATH}/potion.png`
     },
     {
-        label: 'Equipes',
-        icon: 'pi pi-users',
+        label: 'Times',
+        icon: 'iconoirPokeball',
         routerLink: ['/teams']
     },
     {
         label: 'Catálogo',
-        icon: 'pi pi-file-excel',
+        icon: 'iconoirSmartphoneDevice', // iconoirSmartphoneDevice
         items: [
             {
                 label: 'Pokedex',
-                icon: 'pi pi-database',
+                icon: 'iconoirSmartphoneDevice',
                 routerLink: ['/pokedex']
             },
             {
                 label: 'Items',
-                icon: 'pi pi-barcode',
+                icon: 'iconoirSmartphoneDevice',
                 routerLink: ['/items']
             }
         ]

@@ -1,13 +1,14 @@
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
-import { InjectionToken, Provider } from '@angular/core';
+import { Provider } from '@angular/core';
 import { TestModuleMetadata } from '@angular/core/testing';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { ActivatedRoute } from '@angular/router';
 
 // export const APP_CONFIG = new InjectionToken<AppConfig>("app.config");
-export const APP_URL = new InjectionToken<string>('APP_URL');
-export const AUTHOR_GITHUB = new InjectionToken<string>('AUTHOR_GITHUB');
+export const APP_URL = 'localhost:4200';
+export const AUTHOR_GITHUB = 'https://github.com/Soueth';
+export const ICON_PATH = 'assets/icons/images';
 
 // export interface AppConfig {
 //   appName: string;
@@ -22,6 +23,10 @@ export const GlobalConstants: Provider[] = [
     {
         provide: AUTHOR_GITHUB,
         useValue: 'https://github.com/Soueth',
+    },
+    {
+        provide: ICON_PATH,
+        useValue: 'assets/icons/images',
     },
 ];
 

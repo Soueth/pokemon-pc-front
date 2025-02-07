@@ -1,9 +1,8 @@
 import { NgOptimizedImage } from "@angular/common";
-import { Component, ElementRef, Inject, OnInit, Renderer2, ViewChild } from "@angular/core";
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from "@angular/core";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { UntilDestroy } from '@ngneat/until-destroy';
 import { TranslatePipe } from "src/shared/pipes/translate.pipe";
-import { AUTHOR_GITHUB } from "../common/constants";
 import { LandingContentComponent } from "./landing-content/landing-content.component";
 import { SignSideComponent } from "./sign-side/sign-side.component";
 import { TopLoginComponent } from "./top-login/top-login.component";
@@ -32,7 +31,7 @@ export class LandingPageComponent implements OnInit {
 	@ViewChild("landingContent") landingContent!: LandingContentComponent;
 
 	constructor(
-		@Inject(AUTHOR_GITHUB) public authorGithub: string,
+		// @Inject(AUTHOR_GITHUB) public authorGithub: string,
 		private renderer: Renderer2,
 	) {}
 

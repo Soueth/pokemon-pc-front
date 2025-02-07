@@ -13,13 +13,20 @@ $primary-lighten: lighten($primary-color, 35%); // #e5f1fd
     > div.p-menubar.p-component {
         background-color: $primary-lighten;
         box-shadow: 0 0 2px 0.2px;
-        
+
         .p-menubar-item-content {
+            cursor: pointer;
+            padding: 0.5rem;
             border-radius: 9px;
-            // background-color: lighten($primary-color, 35%);
 
             &:hover {
                 background-color: lighten($primary-color, 25%);
+            }
+            
+            .p-menuitem-link {
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
             }
         }
 
@@ -30,5 +37,7 @@ $primary-lighten: lighten($primary-color, 35%); // #e5f1fd
         .p-menubar-submenu {
             background-color: $primary-lighten;
         }
+        
     }
+   
 }
