@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { BoxComponent } from './box/box.component';
-import { BoxesFiltersComponent } from './boxes-filters/boxes-filters.component';
+import { BoxComponent } from './components/box/box.component';
+import { BoxesFiltersComponent } from './components/boxes-filters/boxes-filters.component';
 
 @Component({
   selector: 'app-boxes',
