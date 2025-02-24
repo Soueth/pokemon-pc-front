@@ -1,27 +1,15 @@
-# PokemonPcFront
+# Pokemon PC
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+Um projeto de um sistema de armazenamento de Pokemon (semelhante ao de dentro do jogo) utilizando Angular 18, baseado em *Standalone Componenets* e fazendo uso da nova sintaxe e de signals.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Cadastrar, manter e deletar pokemon, com suas natures, EVs e IVs, habilidades, itens, etc.
+- Organizar os pokemon cadastrados à vontade do usuário.
+- Pesquisar pokemon através de uma pokedex dentro do sistema
+- Criar times e organizá-los facilmente
+- Oferecer visualização gráfica sobre os times e os pokemon na box, a fim de facilitar análise.
 
-## Code scaffolding
+## Testando o projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Execute `npm install --force` para baixar todas as dependências. Logo em seguida, `ng serve` para criar um servidor de desenvolvimento. Após isso, acesse `http://localhost:4200/`.
