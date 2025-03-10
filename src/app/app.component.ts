@@ -1,7 +1,6 @@
 import { Component, OnInit, signal } from "@angular/core";
 import { MatIconModule } from '@angular/material/icon';
 import { RouterOutlet } from "@angular/router";
-import { IconRegistryService } from "src/shared/services/icon-registry.service";
 import { GlobalConstants } from "./common/constants";
 import { ActiveTeamComponent } from "./shared/components/active-team/active-team.component";
 import { TopMenuComponent } from "./shared/components/top-menu/top-menu.component";
@@ -25,7 +24,7 @@ import { LanguageService } from "./shared/services/language.service";
 	templateUrl: "./app.component.html",
 	styleUrl: "./app.component.scss",
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 	title = "Boxes";
 
 	isLogged = signal<boolean>(true); // false
@@ -33,14 +32,14 @@ export class AppComponent implements OnInit {
 	constructor(
 		private langService: LanguageService,
 		private authService: AuthService,
-		private iconRegistryService: IconRegistryService,
+		// private iconRegistryService: IconRegistryService,
 	) {
 		this.langService.setLanguage("pt-br");
 
 		this.authService.isLogged$.subscribe((logged) => this.isLogged.set(logged));
 	}
 
-	ngOnInit(): void {
-		this.iconRegistryService.registerIcons();
-	}
+	// ngOnInit(): void {
+	// 	this.iconRegistryService.registerIcons();
+	// }
 }
