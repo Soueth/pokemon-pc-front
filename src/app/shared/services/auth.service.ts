@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, tap } from "rxjs";
 import { ILogin } from "src/app/landing-page/landing-page.types";
 import { enviroment } from "src/enviroments/enviroment-dev";
 import { localStorageAvalible } from "src/shared/functions";
-import { ResponseProps } from "src/shared/types/responses";
+import { ResponseProps } from "src/shared/interfaces/responses";
 
 
 @Injectable({ providedIn: 'root' })
@@ -27,12 +27,6 @@ export class AuthService {
         }
 
     }
-
-    // private getCSRF() {
-    //     return lastValueFrom(
-    //         this.http.get(`${enviroment.apiUrl}/sanctum/csrf-cookie`)
-    //     );
-    // }
 
     // Loga o usuáio
     login(content: ILogin): Observable<HttpResponse<ResponseProps<void>>> {
